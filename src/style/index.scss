@@ -1,0 +1,72 @@
+@import "./normalize.css";
+@import "./skeleton.css";
+
+$colors:(
+  "primary":rbga(blue, .9),
+  "secondary":rgba(orange, .6),
+  "dark":rgba(black, .7),
+  "light":rgba(beige, .9),
+  "success":rgba(green, .9),
+  "danger":rgba(red, .9)
+);
+
+@function color($name){
+  @return map-get($colors, $name);
+};
+
+.App {
+
+
+    .header, .footer {
+      background-color: color("primary");
+    }
+
+    height:100vh;
+    box-shadow: inset 0 0 10px color("dark");
+    padding:1%;
+
+    .header {
+        border-bottom:1px ridge color("dark");
+        height:15%;
+
+        width:100%;
+        position: fixed;
+        top:0;
+        left:0;
+
+        .portrait {
+          border:1px dotted color("danger");
+          border-radius: 50%;
+          height:100px;
+          width:100px;
+          background-image:url("/static/images/portrait.jpeg");
+        }
+
+        .title {
+
+        }
+
+        .navbar {
+          li {
+            display: inline-block;
+          }
+        }
+    }
+
+
+    .body {
+      margin-top:10%;
+    }
+
+
+    .footer {
+
+      position: fixed;
+      bottom:0;
+      left:0;
+
+      border-top:1px groove color("dark");
+      height:15%;
+      width:100%;
+    }
+}
